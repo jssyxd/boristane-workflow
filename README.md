@@ -1,16 +1,55 @@
 # boristane-workflow
 
-Boris Tane workflow + 3-variant ensemble for complex tasks. Trigger: mention "boris"
+Boris Tane 工作流 + 最小三变体集成 (A/B/C) + 评审融合，用于复杂任务（>4 个子步骤）。提及 "boris" 时自动触发。
 
-## Features
-- Smart task classification (simple vs complex)
-- Dynamic Agent Team (Leader/Reviewer/Executor)
-- Three-variant solutions (A/B/C)
-- Forced TDD
-- Quantitative review (5x20=100)
+## 灵感来源
 
-## Usage
-Mention "boris" in conversation to trigger
+boristane-workflow 源于对复杂软件工程任务的系统化处理需求。在实际开发中，我们经常面临以下挑战：
+
+1. **任务复杂度评估困难** - 难以判断一个任务是否真正"复杂"
+2. **方案设计单一** - 传统方式只产生一个方案，容易遗漏更好的选择
+3. **评审缺乏量化标准** - 评审往往主观性强，缺乏统一的评估维度
+4. **实现与测试脱节** - 先实现后测试导致返工率高
+
+## 技术特点
+
+### 1. 智能任务分类
+- **简单任务** (≤4 子任务): 直接执行，跳过完整工作流
+- **复杂任务** (>4 子任务): 启用完整的多代理团队协作
+
+### 2. 动态 Agent 团队
+根据任务动态生成团队：
+- **Leader**: 统筹规划，决策融合
+- **Reviewer**: 1-2 名，量化评审
+- **Executor**: 1-3 名，具体执行
+
+### 3. 三变体方案生成 (Ensemble)
+每个复杂任务生成三个独立方案：
+- **Variant A - 极简版**: 最小实现，功能优先
+- **Variant B - 鲁棒版**: 健壮性优先，错误处理完善
+- **Variant C - 性能版**: 性能优化，资源效率优先
+
+### 4. TDD 强制执行
+- 所有实现必须先写测试
+- 测试通过后才算完成
+
+### 5. 量化评审与融合
+评审维度（每个维度 20 分，满分 100）：
+- 代码质量
+- 可维护性
+- 性能表现
+- 安全性
+- 可扩展性
+
+## 使用场景
+
+### 何时使用
+1. **复杂功能开发** - 需要设计多个技术方案的任务
+2. **代码评审和优化** - 性能优化、架构重构
+3. **学习和研究** - 学习新技术框架
+
+### 如何使用
+**触发方式**：在对话中提及 "boris" 即可触发
 
 ---
-*Generated
+*Generated with Claude Code*
